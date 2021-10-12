@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 // default - передача значения по умолчанию для типа
 var person = new Person("Eugene", default);
 
-// Результат вывода Eugene так как LastName is null 
+// Результат Eugene
 Console.WriteLine(person.ShortName);
 
 // Результат Last name is empty
@@ -18,15 +18,20 @@ else {
     Console.WriteLine($"Last name is not empty ({person.LastName})");
 }
 
-// Условие не выполняется
+// Результат Last name:
+Console.WriteLine($"Last name: {person!.LastName}");
+
+// Условие не выполняется (pattern matching)
 if(person.LastName is {Length: > 0} name){
     Console.WriteLine($"Last name is {name}");
 }
 
+// Результат Try first name is Eugene
 if(TryGetName(out var firstName)){
     Console.WriteLine($"Try first name is {firstName}");
 }
 
+// Результат Try first name length is 6
 Console.WriteLine($"Try first name length is {firstName!.Length}");
 
 bool TryGetName([NotNullWhen(true)] out string? name){
