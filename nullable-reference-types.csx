@@ -26,14 +26,15 @@ if(person.LastName is {Length: > 0} name){
     Console.WriteLine($"Last name is {name}");
 }
 
-// Результат Try first name is Eugene
+// Результат Try first char E of name Eugene
 if(TryGetName(out var firstName)){
-    Console.WriteLine($"Try first name is {firstName}");
+    Console.WriteLine($"Try first char {firstName[0]} of name {firstName}");
 }
 
 // Результат Try first name length is 6
 Console.WriteLine($"Try first name length is {firstName!.Length}");
 
+// Если true то возвращаемое значение не null
 bool TryGetName([NotNullWhen(true)] out string? name){
     name = "Eugene";
     return true;
