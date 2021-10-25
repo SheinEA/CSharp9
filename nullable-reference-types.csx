@@ -28,7 +28,7 @@ if(person.LastName is {Length: > 0} name){
 
 // Результат Try first char E of name Eugene
 if(TryGetName(out var firstName)){
-    Console.WriteLine($"Try first char {firstName[0]} of name {firstName}");
+    Console.WriteLine($"Try first char {firstName![0]} of name {firstName}");
 }
 
 // Результат Try first name length is 6
